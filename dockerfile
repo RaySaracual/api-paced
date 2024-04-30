@@ -32,6 +32,8 @@ RUN npx prisma generate \
 FROM node:20-alpine
 
 ENV NODE_ENV production
+ENV usernameDB  # Set the user for the database
+ENV passwordDB  # Set the password for the database
 
 # USER node
 WORKDIR /home/node
