@@ -19,6 +19,7 @@ async function bootstrap() {
     .addTag('PACED')
     .setBasePath('api')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
