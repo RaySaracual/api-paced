@@ -15,7 +15,7 @@ export class Match {
 
   @Column({
     name: 'fecha',
-    type: 'datetime',
+    type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP',
   })
   fecha: Date;

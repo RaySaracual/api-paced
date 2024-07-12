@@ -19,13 +19,12 @@ export class User {
 
   @Column({
     name: 'password_salt',
-    type: 'varbinary',
-    length: 50,
+    type: 'bytea',
     nullable: false,
   })
   passwordSalt: Buffer;
 
-  @Column({ name: 'password', type: 'varbinary', length: 50, nullable: false })
+  @Column({ name: 'password', type: 'bytea', nullable: false })
   password: Buffer;
 
   @Column({ name: 'email', length: 50, nullable: true })
@@ -42,7 +41,7 @@ export class User {
 
   @Column({
     name: 'create_date',
-    type: 'datetime',
+    type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP',
   })
   createDate: Date;

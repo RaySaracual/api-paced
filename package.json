@@ -20,6 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs/cli": "^10.3.2",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.0",
     "@nestjs/core": "^10.0.0",
@@ -33,10 +34,10 @@
     "mssql": "^10.0.2",
     "mysql2": "^3.9.2",
     "passport-jwt": "^4.0.1",
+    "pg": "^8.12.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "typeorm": "^0.3.20",
-    "@nestjs/cli": "^10.3.2"
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.3.2",

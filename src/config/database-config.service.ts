@@ -7,16 +7,16 @@ export class DatabaseConfigService implements TypeOrmOptionsFactory {
 
   createTypeOrmOptions(): TypeOrmModuleOptions | Promise<TypeOrmModuleOptions> {
     return {
-      type: 'mssql',
-      host: 'pollaguru.database.windows.net',
-      port: 1433,
-      database: 'pa_paced',
-      username: this.configService.get<string>('usernameDB'), // Deja el nombre de usuario y contraseña en blanco para autenticación de Windows (Integrated Security)
-      password: this.configService.get<string>('passwordDB'),
+      type: 'postgres',
+      host: this.configService.get<string>('DB_HOST') || 'localhost',
+      port: this.configService.get<number>('DB_PORT') || 5432,
+      database: this.configService.get<string>('DB_NAME'),
+      username: this.configService.get<string>('DB_USERNAME'),
+      password: this.configService.get<string>('DB_PASSWORD'),
       synchronize: true, // Esto crea las tablas automáticamente, ten cuidado en producción
       logging: false, // Puedes desactivar esto en producción
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-      options: { trustServerCertificate: false },
+      // options: { trustServerCertificate: false },
     };
   }
 }

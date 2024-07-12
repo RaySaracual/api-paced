@@ -9,7 +9,7 @@ export class Tournament {
 
   @Column({
     name: 'registration_date',
-    type: 'datetime',
+    type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP',
   })
   registrationDate: Date;
